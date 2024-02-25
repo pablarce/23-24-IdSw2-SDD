@@ -10,12 +10,12 @@ class Sheet {
     }
 
     public String getCellContent(int i, int j) {
-        if (i == 0 && j == 0) {
+        if (i == 0 && j == 0) { // Arriba a la izquierda
             return (" ").repeat(spacing);
         } else if (i == 0) {
             return " " + (char) (j + 64) + (" ").repeat(spacing - 1);
 
-        } else if (i == 1) {
+        } else if (i == 1) { // Primera fila (letras)
             if (j == 0) {
                 return "+" + ("-").repeat(spacing - 1);
             } else if (j == this.sheetData[i].length - 1) {
@@ -24,10 +24,10 @@ class Sheet {
                 return "+" + ("-").repeat(spacing);
             }
 
-        } else if (i == this.sheetData.length - 1) {
+        } else if (i == this.sheetData.length - 1) { // Última fila
             return ("-").repeat(spacing) + "+";
 
-        } else if (j == 0) {
+        } else if (j == 0) { // Primera columna (numeros)
             int nSpace = 0;
             if (i < 11) {
                 nSpace = spacing - 1;
@@ -36,7 +36,7 @@ class Sheet {
             }
             return i - 1 + (" ").repeat(nSpace) + "|";
 
-        } else if (getCellName(i - 1, j).equals(this.currentCell)) {
+        } else if (getCellName(i - 1, j).equals(this.currentCell)) { // Celda actual
             if (this.sheetData[i][j] == null) {
                 return "[" + (" ").repeat(spacing - 2) + "]" + "|";
             } else {
@@ -46,7 +46,7 @@ class Sheet {
                 }
                 return "[" + cellValue + "]" + "|";
             }
-        } else {
+        } else { // Celdas normales (no son la actual)
             if (this.sheetData[i][j] == null) {
                 return (" ").repeat(spacing) + "|";
             } else {
