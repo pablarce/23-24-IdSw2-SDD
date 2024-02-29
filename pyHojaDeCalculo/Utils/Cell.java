@@ -3,6 +3,10 @@ package Utils;
 public class Cell {
     private String cellValue;
 
+    public Cell() {
+        this.cellValue = null;
+    }
+
     public Cell(String cellValue) {
         this.cellValue = cellValue;
     }
