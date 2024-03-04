@@ -78,6 +78,7 @@ class Sheet {
     }
 
     public void setCellValue(int row, int col, String value) {
+        sheetData[row + 2][col + 1].setCompleteCellValue(value);
         if (value.length() > spacing) {
             value = value.substring(0, spacing);
         } else if (value.length() < spacing) {
