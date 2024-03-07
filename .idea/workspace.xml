@@ -13,6 +13,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 5
+}]]></component>
   <component name="ProjectId" id="2dI0goG2tZ7pjcjKcvr9NVmtZVz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,7 +26,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/caoal_7ce87t7/23-24-IdSw2-SDD/pyHojaDeCalculo",
+    "git-widget-placeholder": "OperacionesMatematicas",
+    "last_opened_file_path": "C:/Users/ADMIN/23-24-IdSw2-SDD/pyHojaDeCalculo",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -52,6 +56,7 @@
       <updated>1709680399185</updated>
       <workItem from="1709680401579" duration="163000" />
       <workItem from="1709680589360" duration="62000" />
+      <workItem from="1709804744948" duration="21000" />
     </task>
     <servers />
   </component>

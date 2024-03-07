@@ -1,59 +1,107 @@
 package Utils;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class OperacionesMatematicas {
 
     public static String evaluarFormula(String formula) {
         if (formula.startsWith("=")) {
             String expresion = formula.substring(1);
-            return Double.toString(evaluarExpresion(expresion));
+            try {
+                double resultado = evaluarExpresion(expresion);
+                return Double.toString(resultado);
+            } catch (Exception e) {
+                return "Error en la expresión matemática: " + e.getMessage();
+            }
         } else {
             return formula;
         }
     }
 
     private static double evaluarExpresion(String expresion) {
+        Deque<Double> numeros = new ArrayDeque<>();
+        Deque<Character> operadores = new ArrayDeque<>();
+
         char[] caracteres = expresion.toCharArray();
-        double resultado = 0;
-        char operador = '+';
-        StringBuilder numeroActual = new StringBuilder();
 
-        for (char caracter : caracteres) {
+        for (int i = 0; i < caracteres.length; i++) {
+            char caracter = caracteres[i];
+
             if (Character.isDigit(caracter) || caracter == '.') {
-                numeroActual.append(caracter);
-            } else {
-                double numero = Double.parseDouble(numeroActual.toString());
-                resultado = aplicarOperacion(resultado, numero, operador);
+                StringBuilder numeroActual = new StringBuilder();
 
-                numeroActual = new StringBuilder();
-                operador = caracter;
+                while (i < caracteres.length && (Character.isDigit(caracteres[i]) || caracteres[i] == '.')) {
+                    numeroActual.append(caracteres[i]);
+                    i++;
+                }
+                i--;
+
+                numeros.push(Double.parseDouble(numeroActual.toString()));
+            }else if (caracter == '(') {
+                operadores.push(caracter);
+            }else if (caracter == ')') {
+                while (!operadores.isEmpty() && operadores.peek() != '(') {
+                    aplicarOperacion(numeros, operadores.pop());
+                }
+                operadores.pop();
+            }else if (esOperador(caracter)) {
+                while (!operadores.isEmpty() && precedencia(operadores.peek()) >= precedencia(caracter)) {
+                    aplicarOperacion(numeros, operadores.pop());
+                }
+                operadores.push(caracter);
             }
         }
 
-        double ultimoNumero = Double.parseDouble(numeroActual.toString());
-        resultado = aplicarOperacion(resultado, ultimoNumero, operador);
+        while (!operadores.isEmpty()) {
+            aplicarOperacion(numeros, operadores.pop());
+        }
 
-        return resultado;
+        return numeros.pop();
     }
 
-    private static double aplicarOperacion(double num1, double num2, char operador) {
+    private static boolean esOperador(char c) {
+        return c == '+' || c == '-' || c == '*' || c == '/';
+    }
+
+    private static int precedencia(char operador) {
         switch (operador) {
             case '+':
-                return num1 + num2;
             case '-':
-                return num1 - num2;
+                return 1;
             case '*':
-                return num1 * num2;
+            case '/':
+                return 2;
+            default:
+                return 0;
+        }
+    }
+
+    private static void aplicarOperacion(Deque<Double> numeros, char operador) {
+        double num2 = numeros.pop();
+        double num1 = numeros.pop();
+
+        switch (operador) {
+            case '+':
+                numeros.push(num1 + num2);
+                break;
+            case '-':
+                numeros.push(num1 - num2);
+                break;
+            case '*':
+                numeros.push(num1 * num2);
+                break;
             case '/':
                 if (num2 != 0) {
-                    return num1 / num2;
+                    numeros.push(num1 / num2);
                 } else {
-                    System.err.println("Error: División por cero.");
-                    return Double.NaN;
+                    throw new ArithmeticException("División por cero.");
                 }
+                break;
             default:
-                System.err.println("Error: Operador no reconocido.");
-                return Double.NaN;
+                throw new IllegalArgumentException("Operador no reconocido.");
         }
     }
 }
+
 
