@@ -3,7 +3,7 @@ package Utils;
 class Sheet {
     private Cell[][] sheetData;
     private String currentCell;
-    private final int spacing = 8;
+    public int spacing = 8;
 
     public Sheet(int rows, int columns) {
         sheetData = new Cell[rows][columns];
@@ -65,6 +65,8 @@ class Sheet {
         }
     }
 
+    public int getSpacing(){return spacing;}
+
     static String getCellName(int i, int j) {
         return (char) (j + 64) + String.valueOf(i);
     }
@@ -90,4 +92,26 @@ class Sheet {
     public Cell[][] getSheetData() {
         return sheetData;
     }
+
+    public void cellSize(int size) {
+        spacing = size;
+        if (spacing < 1) {
+            spacing = 1;
+        }
+        for (int i = 0; i < sheetData.length; i++) {
+            for (int j = 0; j < sheetData[i].length; j++) {
+                if (sheetData[i][j] != null && sheetData[i][j].getCellValue() != null) {
+                    String cellValue = sheetData[i][j].getCellValue();
+                    if (cellValue.length() > spacing - 2) {
+                        cellValue = cellValue.substring(0, spacing - 2);
+                    } else if (cellValue.length() < spacing - 2) {
+                        int spacesToAdd = spacing - 2 - cellValue.length();
+                        cellValue = cellValue + " ".repeat(spacesToAdd);
+                    }
+                    sheetData[i][j].setCellValue(cellValue);
+                }
+            }
+        }
+    }
+
 }
