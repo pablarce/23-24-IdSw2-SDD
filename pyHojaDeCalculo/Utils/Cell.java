@@ -2,7 +2,6 @@ package Utils;
 
 public class Cell {
     private String cellValue;
-    private String completeCellValue;
 
     public Cell() {
         this.cellValue = null;
@@ -20,11 +19,8 @@ public class Cell {
         this.cellValue = cellValue;
     }
 
-    public String getCompleteCellValue() {
-        return completeCellValue;
-    }
-
-    public void setCompleteCellValue(String completeCellValue) {
-        this.completeCellValue = completeCellValue;
+    @Override
+    public String toString() {
+        return cellValue;
     }
 }

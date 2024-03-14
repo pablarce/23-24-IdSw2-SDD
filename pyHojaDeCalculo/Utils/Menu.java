@@ -12,8 +12,8 @@ class Menu {
         }
     }
 
-    public static void showMovementMenu(String currentCell, String cellValue) {
-        System.out.println("Celda actual: " + currentCell + " con valor: " + cellValue);
+    public static void showMovementMenu(String currentCell) {
+        System.out.println("Celda actual: " + currentCell);
         System.out.println("Utilice las teclas W, A, S y D para moverse.");
         System.out.println("Presione E para editar la celda actual.");
         System.out.println("Presione Q para salir.");
