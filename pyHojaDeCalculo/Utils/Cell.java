@@ -18,4 +18,9 @@ public class Cell {
     public void setCellValue(String cellValue) {
         this.cellValue = cellValue;
     }
+
+    @Override
+    public String toString() {
+        return cellValue;
+    }
 }
