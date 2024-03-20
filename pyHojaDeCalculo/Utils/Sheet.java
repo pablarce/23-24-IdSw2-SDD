@@ -50,6 +50,7 @@ class Sheet {
                 return "[" + (" ").repeat(spacing - 2) + "]" + "|";
             } else {
                 String cellValue = this.sheetData[i][j].getCellValue();
+
                 if (cellValue.length() > spacing - 2) {
                     cellValue = cellValue.substring(0, spacing - 2);
                 }
@@ -59,7 +60,12 @@ class Sheet {
             if (this.sheetData[i][j].getCellValue() == null) {
                 return (" ").repeat(spacing) + "|";
             } else {
-                return this.sheetData[i][j].toString() + "|";
+                String cellValue = this.sheetData[i][j].getCellValue();
+
+                if (cellValue.length() > spacing) {
+                    cellValue = cellValue.substring(0, spacing);
+                }
+                return cellValue + "|";
             }
         }
     }
@@ -76,13 +82,7 @@ class Sheet {
     }
 
     public void setCellValue(int row, int col, String value) {
-        if (value.length() > spacing) {
-            value = value.substring(0, spacing);
-        } else if (value.length() < spacing) {
-            int spacesToAdd = spacing - value.length();
-            value = value + " ".repeat(spacesToAdd);
-        }
-        sheetData[row + 2][col + 1].setCellValue(value);;
+        sheetData[row + 2][col + 1].setCellValue(value);
     }
 
 
