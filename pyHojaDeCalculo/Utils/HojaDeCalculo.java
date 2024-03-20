@@ -22,8 +22,8 @@ public class HojaDeCalculo {
                 break;
             } else if (command.equals("e")) {
                 System.out.println("Ingrese el nuevo valor de la celda " + sheet.getCurrentCell() + ":");
-                String newValue = input.nextLine();
-                sheet.setCellValue(movement.getCurrentRow(sheet.getCurrentCell()), movement.getCurrentColumn(sheet.getCurrentCell()), newValue);
+                String Result = OperacionesMatematicas.evaluarFormula(input.nextLine());
+                sheet.setCellValue(movement.getCurrentRow(sheet.getCurrentCell()), movement.getCurrentColumn(sheet.getCurrentCell()),Result);
             } else {
                 sheet.setCurrentCell(movement.handleCommand(command, sheet.getCurrentCell()));
             }
