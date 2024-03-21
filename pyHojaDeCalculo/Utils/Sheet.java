@@ -3,7 +3,7 @@ package Utils;
 class Sheet {
     private Cell[][] sheetData;
     private String currentCell;
-    private final int spacing = 8;
+    private int spacing = 8;
     public Sheet(int rows, int columns) {
         sheetData = new Cell[rows][columns];
         currentCell = "A1";
@@ -69,6 +69,7 @@ class Sheet {
             }
         }
     }
+    public int getSpacing(){return spacing;}
     static String getCellName(int i, int j) {
         return (char) (j + 64) + String.valueOf(i);
     }
@@ -87,5 +88,12 @@ class Sheet {
 
     public Cell[][] getSheetData(){
         return sheetData;
+    }
+
+    public void setCellSize(int size) {
+        this.spacing = size;
+        if (this.spacing < 1) {
+            this.spacing = 1;
+        }
     }
 }
