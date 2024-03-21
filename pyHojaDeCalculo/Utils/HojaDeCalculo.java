@@ -1,6 +1,5 @@
 package Utils;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class HojaDeCalculo {
@@ -25,11 +24,11 @@ public class HojaDeCalculo {
                 System.out.println("Ingrese el nuevo valor de la celda " + sheet.getCurrentCell() + ":");
                 String newValue = input.nextLine();
                 sheet.setCellValue(movement.getCurrentRow(sheet.getCurrentCell()), movement.getCurrentColumn(sheet.getCurrentCell()), newValue);
-            } else if(command.equals("s")){
+            } else if(command.equals("r")){
                 System.out.println("Ingrese el tamaño que desea: ");
                 int newSize = Integer.parseInt(input.nextLine());
-                sheet.cellSize(newSize);
-                System.out.println("Tamaño actualizado a: " + sheet.spacing);
+                sheet.setCellSize(newSize);
+                System.out.println("Tamaño actualizado a: " + sheet.getSpacing());
             }
 
             else {
