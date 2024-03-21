@@ -17,14 +17,21 @@ public class HojaDeCalculo {
         while (true) {
             Menu.showSheet(sheet);
             Menu.showMovementMenu(sheet.getCurrentCell());
-            String command = input.nextLine();
+            String command = input.nextLine().toLowerCase();
             if (command.equals("q")) {
                 break;
             } else if (command.equals("e")) {
                 System.out.println("Ingrese el nuevo valor de la celda " + sheet.getCurrentCell() + ":");
-                String Result = OperacionesMatematicas.evaluarFormula(input.nextLine());
+                String Result = OperacionesMatematicas.evaluarFormula(input.nextLine(), sheet);
                 sheet.setCellValue(movement.getCurrentRow(sheet.getCurrentCell()), movement.getCurrentColumn(sheet.getCurrentCell()),Result);
-            } else {
+            } else if(command.equals("r")){
+                System.out.println("Ingrese el tamaño que desea: ");
+                int newSize = Integer.parseInt(input.nextLine());
+                sheet.setCellSize(newSize);
+                System.out.println("Tamaño actualizado a: " + sheet.getSpacing());
+            }
+
+            else {
                 sheet.setCurrentCell(movement.handleCommand(command, sheet.getCurrentCell()));
             }
         }

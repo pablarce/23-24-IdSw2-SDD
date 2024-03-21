@@ -3,7 +3,7 @@ package Utils;
 class Sheet {
     private Cell[][] sheetData;
     private String currentCell;
-    private final int spacing = 8;
+    private int spacing = 8;
     public Sheet(int rows, int columns) {
         sheetData = new Cell[rows][columns];
         currentCell = "A1";
@@ -50,19 +50,26 @@ class Sheet {
                 return "[" + (" ").repeat(spacing - 2) + "]" + "|";
             } else {
                 String cellValue = this.sheetData[i][j].getCellValue();
+
                 if (cellValue.length() > spacing - 2) {
                     cellValue = cellValue.substring(0, spacing - 2);
                 }
-                return "[" + cellValue + "]" + "|";
+                return "[" + cellValue + " ".repeat(spacing -2 - cellValue.length()) + "]" + "|";
             }
         } else { // Celdas normales (no son la actual)
             if (this.sheetData[i][j].getCellValue() == null) {
                 return (" ").repeat(spacing) + "|";
             } else {
-                return this.sheetData[i][j].toString() + "|";
+                String cellValue = this.sheetData[i][j].getCellValue();
+
+                if (cellValue.length() > spacing) {
+                    cellValue = cellValue.substring(0, spacing);
+                }
+                return cellValue + " ".repeat(spacing - cellValue.length()) + "|";
             }
         }
     }
+    public int getSpacing(){return spacing;}
     static String getCellName(int i, int j) {
         return (char) (j + 64) + String.valueOf(i);
     }
@@ -76,18 +83,17 @@ class Sheet {
     }
 
     public void setCellValue(int row, int col, String value) {
-        if (value.length() > spacing) {
-            value = value.substring(0, spacing);
-        } else if (value.length() < spacing) {
-            int spacesToAdd = spacing - value.length();
-            value = value + " ".repeat(spacesToAdd);
-        }
-        sheetData[row + 2][col + 1].setCellValue(value);;
+        sheetData[row + 2][col + 1].setCellValue(value);
     }
-
-
 
     public Cell[][] getSheetData(){
         return sheetData;
+    }
+
+    public void setCellSize(int size) {
+        this.spacing = size;
+        if (this.spacing < 1) {
+            this.spacing = 1;
+        }
     }
 }
