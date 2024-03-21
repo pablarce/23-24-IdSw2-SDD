@@ -54,7 +54,7 @@ class Sheet {
                 if (cellValue.length() > spacing - 2) {
                     cellValue = cellValue.substring(0, spacing - 2);
                 }
-                return "[" + cellValue + "]" + "|";
+                return "[" + cellValue + " ".repeat(spacing -2 - cellValue.length()) + "]" + "|";
             }
         } else { // Celdas normales (no son la actual)
             if (this.sheetData[i][j].getCellValue() == null) {
@@ -65,7 +65,7 @@ class Sheet {
                 if (cellValue.length() > spacing) {
                     cellValue = cellValue.substring(0, spacing);
                 }
-                return cellValue + "|";
+                return cellValue + " ".repeat(spacing - cellValue.length()) + "|";
             }
         }
     }
@@ -84,8 +84,6 @@ class Sheet {
     public void setCellValue(int row, int col, String value) {
         sheetData[row + 2][col + 1].setCellValue(value);
     }
-
-
 
     public Cell[][] getSheetData(){
         return sheetData;
