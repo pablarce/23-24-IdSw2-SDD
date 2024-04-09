@@ -6,16 +6,18 @@ public class HojaDeCalculo {
     private Sheet sheet;
     private Movement movement;
     private Scanner input;
+    private int Rows=10;
+    private int Columns=10;
 
     public HojaDeCalculo() {
-        sheet = new Sheet(18, 11);
+        sheet = new Sheet(Rows, Columns);
         movement = new Movement();
         input = new Scanner(System.in);
     }
 
     public void run() {
         while (true) {
-            Menu.showSheet(sheet);
+            Menu.showSheet(sheet,Rows,Columns,movement.getCurrentRow(sheet.getCurrentCell()),movement.getCurrentColumn(sheet.getCurrentCell()));
             Menu.showMovementMenu(sheet.getCurrentCell());
             String command = input.nextLine().toLowerCase();
             if (command.equals("q")) {
