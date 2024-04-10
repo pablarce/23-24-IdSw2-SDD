@@ -24,7 +24,6 @@ public class HojaDeCalculo {
                 break;
             } else if (command.equals("e")) {
                 System.out.println("Ingrese el nuevo valor de la celda " + sheet.getCurrentCell() + ":");
-                String newValue = input.nextLine();
                 int row = movement.getCurrentRow(sheet.getCurrentCell());
                 int column = movement.getCurrentColumn(sheet.getCurrentCell());
                 String Result = OperacionesMatematicas.evaluarFormula(input.nextLine(), sheet);
