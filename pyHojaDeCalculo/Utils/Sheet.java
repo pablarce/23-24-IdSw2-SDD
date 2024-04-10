@@ -13,7 +13,7 @@ class Sheet {
     public void fillSheetData(int rows, int columns) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                sheetData[i][j] = new Cell();
+                sheetData[i][j] = new Cell(i, j); // Iniciar cada con celda con sus cordenadas
             }
         }
     }
