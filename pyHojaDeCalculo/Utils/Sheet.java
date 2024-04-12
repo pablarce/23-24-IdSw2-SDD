@@ -13,18 +13,18 @@ class Sheet {
     public void fillSheetData(int rows, int columns) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                sheetData[i][j] = new Cell();
+                sheetData[i][j] = new Cell(i, j);
             }
         }
     }
 
     public String getCellContent(int i, int j) {
-        if (i == 0 && j == 0) { // Arriba a la izquierda
+        if (i == 0 && j == 0) { 
             return (" ").repeat(spacing);
         } else if (i == 0) {
             return " " + (char) (j + 64) + (" ").repeat(spacing - 1);
 
-        } else if (i == 1) { // Primera fila (letras)
+        } else if (i == 1) {
             if (j == 0) {
                 return "+" + ("-").repeat(spacing - 1);
             } else if (j == this.sheetData[i].length - 1) {
@@ -33,10 +33,10 @@ class Sheet {
                 return "+" + ("-").repeat(spacing);
             }
 
-        } else if (i == this.sheetData.length - 1) { // Última fila
+        } else if (i == this.sheetData.length - 1) { 
             return ("-").repeat(spacing) + "+";
 
-        } else if (j == 0) { // Primera columna (numeros)
+        } else if (j == 0) {
             int nSpace = 0;
             if (i < 11) {
                 nSpace = spacing - 1;
@@ -45,7 +45,7 @@ class Sheet {
             }
             return i - 1 + (" ").repeat(nSpace) + "|";
 
-        } else if (getCellName(i - 1, j).equals(this.currentCell)) { // Celda actual
+        } else if (getCellName(i - 1, j).equals(this.currentCell)) {
             if (this.sheetData[i][j].getCellValue() == null) {
                 return "[" + (" ").repeat(spacing - 2) + "]" + "|";
             } else {
@@ -56,7 +56,7 @@ class Sheet {
                 }
                 return "[" + cellValue + " ".repeat(spacing -2 - cellValue.length()) + "]" + "|";
             }
-        } else { // Celdas normales (no son la actual)
+        } else { 
             if (this.sheetData[i][j].getCellValue() == null) {
                 return (" ").repeat(spacing) + "|";
             } else {
