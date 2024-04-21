@@ -10,7 +10,7 @@ class Menu {
         int startRow = Math.max(0, cursorRow - viewportHeight / 2);
         int startCol = Math.max(0, cursorCol - viewportWith / 2);
 
-        for (int i = startRow; i < Math.min(sheet.getRows() ,cursorRow + viewportHeight); i++) {
+        for (int i = startRow; i < Math.min(sheet.getRows(), cursorRow + viewportHeight); i++) {
             for (int j = startCol; j < Math.min(sheet.getColumns(), cursorCol + viewportWith); j++) {
                     System.out.print(sheet.getCellContent(i, j));
             }

@@ -16,17 +16,18 @@ public class Spreadsheet {
     }
 
     public void run() {
-        while (true) {
-            Menu.showSheet(sheet, movement.getCurrentRow(sheet.getCurrentCell()),
-                    movement.getCurrentColumn(sheet.getCurrentCell()));
+        boolean running = true;
+        while (running) {
+            Menu.showSheet(sheet, movement.getFormattedRow(sheet.getCurrentCell()),
+                    movement.getFormattedColumn(sheet.getCurrentCell()));
             Menu.showMovementMenu(sheet.getCurrentCell());
             String command = input.nextLine().toLowerCase();
             if (command.equals("q")) {
-                break;
+                running = false;
             } else if (command.equals("e")) {
                 System.out.println("Ingrese el nuevo valor de la celda " + sheet.getCurrentCell() + ":");
-                int row = movement.getCurrentRow(sheet.getCurrentCell());
-                int column = movement.getCurrentColumn(sheet.getCurrentCell());
+                int row = movement.getFormattedRow(sheet.getCurrentCell());
+                int column = movement.getFormattedColumn(sheet.getCurrentCell());
                 String result = MathOperations.evaluateFormula(input.nextLine(), sheet);
                 sheet.setCellValue(row, column, result);
             } else if (command.equals("r")) {

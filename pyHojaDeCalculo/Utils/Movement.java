@@ -1,11 +1,11 @@
 package Utils;
 
 class Movement {
-    public int getCurrentRow(String currentCell) {
+    public int getFormattedRow(String currentCell) {
         return Integer.parseInt(currentCell.substring(1)) - 1;
     }
 
-    public int getCurrentColumn(String currentCell) {
+    public int getFormattedColumn(String currentCell) {
         return currentCell.charAt(0) - 'A';
     }
 
@@ -26,22 +26,22 @@ class Movement {
     }
 
     private String moveUp(String currentCell) {
-        int row = getCurrentRow(currentCell);
+        int row = getFormattedRow(currentCell);
         return row > 0 ? String.format("%c%d", currentCell.charAt(0), row) : currentCell;
     }
 
     private String moveDown(String currentCell) {
-        int row = getCurrentRow(currentCell);
+        int row = getFormattedRow(currentCell);
         return row < 14 ? String.format("%c%d", currentCell.charAt(0), row + 2) : currentCell;
     }
 
     private String moveLeft(String currentCell) {
         char column = currentCell.charAt(0);
-        return column > 'A' ? String.format("%c%d", (char) (column - 1), getCurrentRow(currentCell) + 1) : currentCell;
+        return column > 'A' ? String.format("%c%d", (char) (column - 1), getFormattedRow(currentCell) + 1) : currentCell;
     }
 
     private String moveRight(String currentCell) {
         char column = currentCell.charAt(0);
-        return column < 'J' ? String.format("%c%d", (char) (column + 1), getCurrentRow(currentCell) + 1) : currentCell;
+        return column < 'J' ? String.format("%c%d", (char) (column + 1), getFormattedRow(currentCell) + 1) : currentCell;
     }
 }
