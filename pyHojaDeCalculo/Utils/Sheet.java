@@ -90,6 +90,14 @@ class Sheet {
         return sheetData;
     }
 
+    public int getRows() {
+        return sheetData.length - 2;
+    }
+
+    public int getColumns() {
+        return sheetData[0].length - 1;
+    }
+
     public void setCellSize(int size) {
         this.spacing = size;
         if (this.spacing < 1) {

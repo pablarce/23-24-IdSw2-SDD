@@ -2,16 +2,16 @@ package Utils;
 
 class Menu {
 
-    private static final int ViewportHeight = 10;
-    private static final int ViewportWith = 5;
-    public static void showSheet(Sheet sheet, int rows, int columns, int cursorRow, int cursorCol) {
+    private static final int viewportHeight = 10;
+    private static final int viewportWith = 5;
+    public static void showSheet(Sheet sheet, int cursorRow, int cursorCol) { 
         System.out.println("Hoja de Cálculo:");
 
-        int startRow = Math.max(0, cursorRow - ViewportHeight / 2);
-        int startCol = Math.max(0, cursorCol - ViewportWith / 2);
+        int startRow = Math.max(0, cursorRow - viewportHeight / 2);
+        int startCol = Math.max(0, cursorCol - viewportWith / 2);
 
-        for (int i = startRow; i < Math.min(rows,cursorRow + ViewportHeight); i++) {
-            for (int j = startCol; j < Math.min(columns, cursorCol + ViewportWith); j++) {
+        for (int i = startRow; i < Math.min(sheet.getRows() ,cursorRow + viewportHeight); i++) {
+            for (int j = startCol; j < Math.min(sheet.getColumns(), cursorCol + viewportWith); j++) {
                     System.out.print(sheet.getCellContent(i, j));
             }
             System.out.println();

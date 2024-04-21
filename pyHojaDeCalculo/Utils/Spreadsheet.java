@@ -17,7 +17,7 @@ public class Spreadsheet {
 
     public void run() {
         while (true) {
-            Menu.showSheet(sheet, rows, columns, movement.getCurrentRow(sheet.getCurrentCell()),
+            Menu.showSheet(sheet, movement.getCurrentRow(sheet.getCurrentCell()),
                     movement.getCurrentColumn(sheet.getCurrentCell()));
             Menu.showMovementMenu(sheet.getCurrentCell());
             String command = input.nextLine().toLowerCase();
