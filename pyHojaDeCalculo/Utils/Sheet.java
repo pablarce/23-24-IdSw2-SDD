@@ -19,34 +19,7 @@ class Sheet {
     }
 
     public String getCellContent(int i, int j) {
-        /*if (i == 0 && j == 0) { 
-            return (" ").repeat(spacing);
-        } else if (i == 0) {
-            return " " + (char) (j + 64) + (" ").repeat(spacing - 1);
-
-        } else if (i == 1) {
-            if (j == 0) {
-                return "+" + ("-").repeat(spacing - 1);
-            } else if (j == this.sheetData[i].length - 1) {
-                return "+" + ("-").repeat(spacing) + "+";
-            } else {
-                return "+" + ("-").repeat(spacing);
-            }
-
-        } else */
-        if (i == this.sheetData.length - 1) { 
-            return ("-").repeat(spacing) + "+";
-
-        } else if (j == 0) {
-            int nSpace = 0;
-            if (i < 11) {
-                nSpace = spacing - 1;
-            } else {
-                nSpace = spacing - 2;
-            }
-            return i + (" ").repeat(nSpace) + "|";
-
-        } else if (getCellName(i - 1, j).equals(this.currentCell)) {
+        if (getCellName(i - 1, j).equals(this.currentCell)) {
             if (this.sheetData[i][j].getCellValue() == null) {
                 return "[" + (" ").repeat(spacing - 2) + "]" + "|";
             } else {
