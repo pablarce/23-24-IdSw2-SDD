@@ -19,7 +19,7 @@ class Sheet {
     }
 
     public String getCellContent(int i, int j) {
-        if (i == 0 && j == 0) { 
+        /*if (i == 0 && j == 0) { 
             return (" ").repeat(spacing);
         } else if (i == 0) {
             return " " + (char) (j + 64) + (" ").repeat(spacing - 1);
@@ -33,7 +33,8 @@ class Sheet {
                 return "+" + ("-").repeat(spacing);
             }
 
-        } else if (i == this.sheetData.length - 1) { 
+        } else */
+        if (i == this.sheetData.length - 1) { 
             return ("-").repeat(spacing) + "+";
 
         } else if (j == 0) {
@@ -43,7 +44,7 @@ class Sheet {
             } else {
                 nSpace = spacing - 2;
             }
-            return i - 1 + (" ").repeat(nSpace) + "|";
+            return i + (" ").repeat(nSpace) + "|";
 
         } else if (getCellName(i - 1, j).equals(this.currentCell)) {
             if (this.sheetData[i][j].getCellValue() == null) {
@@ -69,6 +70,7 @@ class Sheet {
             }
         }
     }
+
     public int getSpacing(){return spacing;}
     static String getCellName(int i, int j) {
         return (char) (j + 64) + String.valueOf(i);
@@ -91,11 +93,11 @@ class Sheet {
     }
 
     public int getRows() {
-        return sheetData.length - 2;
+        return sheetData.length;
     }
 
     public int getColumns() {
-        return sheetData[0].length - 1;
+        return sheetData[0].length;
     }
 
     public void setCellSize(int size) {
