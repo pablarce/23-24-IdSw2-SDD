@@ -20,7 +20,7 @@ class Sheet {
 
     public String getCellContent(int i, int j) {
 
-        if (getCellName(i, j).equals(this.currentCell)) {
+        if (getCellLetter(i, j).equals(this.currentCell)) {
             if (this.sheetData[i][j].getCellValue() == null) {
                 return "[" + (" ").repeat(spacing - 2) + "]" + "|";
             } else {
@@ -47,7 +47,7 @@ class Sheet {
 
     public int getSpacing(){return spacing;}
 
-    static String getCellName(int i, int j) {
+    static String getCellLetter(int i, int j) {
         return (char) (j + 65) + String.valueOf(i);
     }
 
@@ -60,7 +60,7 @@ class Sheet {
     }
 
     public void setCellValue(int row, int col, String value) {
-        sheetData[row + 2][col + 1].setCellValue(value);
+        sheetData[row + 1][col].setCellValue(value);
     }
 
     public Cell[][] getSheetData(){
