@@ -8,10 +8,10 @@ public class Viewport {
         int startRow = Math.max(0, cursorRow - Settings.VIEWPORT_HEIGHT / 2);
         int startCol = Math.max(0, cursorCol - Settings.VIEWPORT_WIDTH / 2);
 
-        int endRow = Math.min(Settings.MAX_ROWS, cursorRow + Settings.VIEWPORT_HEIGHT);
-        int endCol = Math.min(Settings.MAX_COLUMNS_NUMBER, cursorCol + Settings.VIEWPORT_WIDTH);
+        int endRow = Math.min(Settings.MAX_ROWS, startRow + Settings.VIEWPORT_HEIGHT); 
+        int endCol = Math.min(Settings.MAX_COLUMNS_NUMBER, startCol + Settings.VIEWPORT_WIDTH);
 
-        printHeaders(spacing, startCol, cursorCol);
+        printHeaders(spacing, startCol, endCol);
 
         for (int i = startRow; i < endRow; i++) {
             for (int j = startCol; j < endCol; j++) {
@@ -23,17 +23,17 @@ public class Viewport {
             System.out.println();
         }
 
-        printBottom(spacing);
+        printBottom(spacing, startCol, endCol);
     }
 
-    private static void printHeaders(int spacing, int startCol, int cursorCol) {
+    private static void printHeaders(int spacing, int startCol, int endCol) {
         System.out.print(" ".repeat(spacing));
-        for (int i = startCol; i < startCol + Settings.VIEWPORT_WIDTH; i++) {
+        for (int i = startCol; i < endCol; i++) {
             System.out.print(" " + (char) (i + 65) + " ".repeat(spacing - 1));
         }
         System.out.println();
         System.out.print("+" + ("-".repeat(spacing - 1)));
-        for (int i = 0; i < Settings.VIEWPORT_WIDTH; i++) {
+        for (int i = startCol; i < endCol; i++) {
             System.out.print("+" + ("-".repeat(spacing)));
         }
         System.out.println("+");
@@ -47,9 +47,9 @@ public class Viewport {
         }
     }
 
-    private static void printBottom(int spacing) {
+    private static void printBottom(int spacing, int startCol, int endCol) {
         System.out.print("+" + ("-".repeat(spacing - 1)));
-        for (int i = 0; i < Settings.VIEWPORT_WIDTH; i++) {
+        for (int i = startCol; i < endCol; i++) {
             System.out.print("+" + ("-".repeat(spacing)));
         }
         System.out.println("+");
