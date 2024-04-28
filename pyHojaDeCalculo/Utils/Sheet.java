@@ -6,7 +6,7 @@ class Sheet {
     private int spacing = 8;
     public Sheet(int rows, int columns) {
         sheetData = new Cell[rows][columns];
-        currentCell = "A1";
+        currentCell = "A0";
         fillSheetData(rows, columns);
     }
 
@@ -19,7 +19,8 @@ class Sheet {
     }
 
     public String getCellContent(int i, int j) {
-        if (getCellName(i - 1, j).equals(this.currentCell)) {
+
+        if (getCellName(i, j).equals(this.currentCell)) {
             if (this.sheetData[i][j].getCellValue() == null) {
                 return "[" + (" ").repeat(spacing - 2) + "]" + "|";
             } else {
@@ -28,7 +29,7 @@ class Sheet {
                 if (cellValue.length() > spacing - 2) {
                     cellValue = cellValue.substring(0, spacing - 2);
                 }
-                return "[" + cellValue + " ".repeat(spacing -2 - cellValue.length()) + "]" + "|";
+                return "[" + cellValue + " ".repeat(spacing - 2 - cellValue.length()) + "]" + "|";
             }
         } else { 
             if (this.sheetData[i][j].getCellValue() == null) {
@@ -45,8 +46,9 @@ class Sheet {
     }
 
     public int getSpacing(){return spacing;}
+
     static String getCellName(int i, int j) {
-        return (char) (j + 64) + String.valueOf(i);
+        return (char) (j + 65) + String.valueOf(i);
     }
 
     public String getCurrentCell() {
