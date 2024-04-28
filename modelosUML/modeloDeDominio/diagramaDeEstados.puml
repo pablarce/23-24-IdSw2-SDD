@@ -1,0 +1,10 @@
+@startuml
+
+[*] -d-> Inactive
+
+Inactive -r-> Running : run()
+
+Running -l-> Inactive : stop()
+Inactive -d-> [*] : destroy()
+
+@enduml
