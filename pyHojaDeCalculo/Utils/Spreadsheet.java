@@ -36,8 +36,7 @@ public class Spreadsheet {
                 int newSize = Integer.parseInt(input.nextLine());
                 sheet.setCellSize(newSize);
                 System.out.println("Tamaño actualizado a: " + sheet.getSpacing());
-            }
-            else {
+            } else {
                 sheet.setCurrentCell(movement.handleCommand(command, sheet.getCurrentCell()));
             }
         }

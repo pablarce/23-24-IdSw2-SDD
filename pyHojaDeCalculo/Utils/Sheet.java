@@ -4,6 +4,7 @@ class Sheet {
     private Cell[][] sheetData;
     private String currentCell;
     private int spacing = 8;
+
     public Sheet(int rows, int columns) {
         sheetData = new Cell[rows][columns];
         currentCell = "A0";
@@ -31,7 +32,7 @@ class Sheet {
                 }
                 return "[" + cellValue + " ".repeat(spacing - 2 - cellValue.length()) + "]" + "|";
             }
-        } else { 
+        } else {
             if (this.sheetData[i][j].getCellValue() == null) {
                 return (" ").repeat(spacing) + "|";
             } else {
@@ -45,7 +46,9 @@ class Sheet {
         }
     }
 
-    public int getSpacing(){return spacing;}
+    public int getSpacing() {
+        return spacing;
+    }
 
     static String getCellLetter(int i, int j) {
         return (char) (j + 65) + String.valueOf(i);
@@ -60,10 +63,10 @@ class Sheet {
     }
 
     public void setCellValue(int row, int col, String value) {
-        sheetData[row + 1][col].setCellValue(value);
+        sheetData[row][col].setCellValue(value);
     }
 
-    public Cell[][] getSheetData(){
+    public Cell[][] getSheetData() {
         return sheetData;
     }
 

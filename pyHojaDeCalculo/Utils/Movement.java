@@ -2,7 +2,7 @@ package Utils;
 
 class Movement {
     public int getFormattedRow(String currentCell) {
-        return Integer.parseInt(currentCell.substring(1)) - 1;
+        return Integer.parseInt(currentCell.substring(1));
     }
 
     public int getFormattedColumn(String currentCell) {
@@ -27,21 +27,24 @@ class Movement {
 
     private String moveUp(String currentCell) {
         int row = getFormattedRow(currentCell);
-        return row >= 0 ? String.format("%c%d", currentCell.charAt(0), row) : currentCell;
+        return row >= 0 ? String.format("%c%d", currentCell.charAt(0), row - 1) : currentCell;
     }
 
     private String moveDown(String currentCell) {
         int row = getFormattedRow(currentCell);
-        return row < Settings.MAX_ROWS - 2 ? String.format("%c%d", currentCell.charAt(0), row + 2) : currentCell;
+        return row < Settings.MAX_ROWS - 1 ? String.format("%c%d", currentCell.charAt(0), row + 1) : currentCell;
     }
 
     private String moveLeft(String currentCell) {
         char column = currentCell.charAt(0);
-        return column > 'A' ? String.format("%c%d", (char) (column - 1), getFormattedRow(currentCell) + 1) : currentCell;
+        return column > 'A' ? String.format("%c%d", (char) (column - 1), getFormattedRow(currentCell))
+                : currentCell;
     }
 
     private String moveRight(String currentCell) {
         char column = currentCell.charAt(0);
-        return column < Settings.MAX_COLUMNS_CHAR ? String.format("%c%d", (char) (column + 1), getFormattedRow(currentCell) + 1) : currentCell;
+        return column < Settings.MAX_COLUMNS_CHAR
+                ? String.format("%c%d", (char) (column + 1), getFormattedRow(currentCell))
+                : currentCell;
     }
 }
