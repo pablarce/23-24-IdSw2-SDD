@@ -6,8 +6,8 @@ public class Spreadsheet {
     private Sheet sheet;
     private Movement movement;
     private Scanner input;
-    private int rows = 10;
-    private int columns = 10;
+    private int rows = Settings.MAX_ROWS;
+    private int columns = Settings.MAX_COLUMNS_NUMBER;
 
     public Spreadsheet() {
         sheet = new Sheet(rows, columns);
@@ -18,16 +18,17 @@ public class Spreadsheet {
     public void run() {
         boolean running = true;
         while (running) {
-            Menu.showSheet(sheet, movement.getFormattedRow(sheet.getCurrentCell()),
-                    movement.getFormattedColumn(sheet.getCurrentCell()));
+            int row = movement.getFormattedRow(sheet.getCurrentCell());
+            int column = movement.getFormattedColumn(sheet.getCurrentCell());
+
+            Viewport.showSheet(sheet, row, column, sheet.getSpacing());
             Menu.showMovementMenu(sheet.getCurrentCell());
             String command = input.nextLine().toLowerCase();
+
             if (command.equals("q")) {
                 running = false;
             } else if (command.equals("e")) {
                 System.out.println("Ingrese el nuevo valor de la celda " + sheet.getCurrentCell() + ":");
-                int row = movement.getFormattedRow(sheet.getCurrentCell());
-                int column = movement.getFormattedColumn(sheet.getCurrentCell());
                 String result = MathOperations.evaluateFormula(input.nextLine(), sheet);
                 sheet.setCellValue(row, column, result);
             } else if (command.equals("r")) {
@@ -35,9 +36,7 @@ public class Spreadsheet {
                 int newSize = Integer.parseInt(input.nextLine());
                 sheet.setCellSize(newSize);
                 System.out.println("Tamaño actualizado a: " + sheet.getSpacing());
-            }
-
-            else {
+            } else {
                 sheet.setCurrentCell(movement.handleCommand(command, sheet.getCurrentCell()));
             }
         }
