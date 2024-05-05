@@ -3,7 +3,7 @@
 
 package "Vista" {
     class Viewport
-    class Menu
+    class MenuInterface
 }
 
 package "Controlador" {
@@ -21,6 +21,6 @@ package "Modelo" {
 
 Modelo --> Vista
 Vista --> Controlador
-Controlador --> Modelo
+Controlador -> Modelo
 
 @enduml
