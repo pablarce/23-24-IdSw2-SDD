@@ -27,7 +27,7 @@ class Movement {
 
     private String moveUp(String currentCell) {
         int row = getFormattedRow(currentCell);
-        return row >= 0 ? String.format("%c%d", currentCell.charAt(0), row - 1) : currentCell;
+        return row > 0 ? String.format("%c%d", currentCell.charAt(0), row - 1) : currentCell;
     }
 
     private String moveDown(String currentCell) {

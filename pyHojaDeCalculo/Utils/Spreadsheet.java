@@ -22,7 +22,7 @@ public class Spreadsheet {
             int column = movement.getFormattedColumn(sheet.getCurrentCell());
 
             Viewport.showSheet(sheet, row, column, sheet.getSpacing());
-            Menu.showMovementMenu(sheet.getCurrentCell());
+            MenuInterface.showMovementMenu(sheet.getCurrentCell());
             String command = input.nextLine().toLowerCase();
 
             if (command.equals("q")) {
