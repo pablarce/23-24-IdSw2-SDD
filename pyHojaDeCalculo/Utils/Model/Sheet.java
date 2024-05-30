@@ -1,6 +1,8 @@
-package Utils;
+package Utils.Model;
 
-class Sheet {
+import Utils.Model.Cell;
+
+public class Sheet {
     private Cell[][] sheetData;
     private String currentCell;
     private int spacing = 8;

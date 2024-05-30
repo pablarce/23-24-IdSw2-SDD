@@ -1,9 +1,12 @@
-package Utils;
+package Utils.View;
+
+import Utils.Model.Sheet;
+import Utils.Controller.Settings;
 
 public class Viewport {
 
 
-    public static void showSheet(Sheet sheet, int cursorRow, int cursorCol, int spacing) { 
+    public static void showSheet(Sheet sheet, int cursorRow, int cursorCol, int spacing) {
 
         int startRow = Math.max(0, cursorRow - Settings.VIEWPORT_HEIGHT / 2);
         int startCol = Math.max(0, cursorCol - Settings.VIEWPORT_WIDTH / 2);

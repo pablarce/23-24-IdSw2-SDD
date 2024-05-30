@@ -1,6 +1,6 @@
-package Utils;
+package Utils.Controller;
 
-class Movement {
+public class Movement {
     public int getFormattedRow(String currentCell) {
         return Integer.parseInt(currentCell.substring(1));
     }

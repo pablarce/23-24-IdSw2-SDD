@@ -1,4 +1,9 @@
-package Utils;
+package Utils.Model;
+
+import Utils.View.MenuInterface;
+import Utils.Controller.Movement;
+import Utils.Controller.Settings;
+import Utils.View.Viewport;
 
 import java.util.Scanner;
 

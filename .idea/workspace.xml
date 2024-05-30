@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="035db25a-81ad-454f-bd02-9b134ef899dd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/23-24-IdSw2-SDD.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/23-24-IdSw2-SDD.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/HojaDeCalculo.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/HojaDeCalculo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/OperacionesMatematicas.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/OperacionesMatematicas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Model/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/MathOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Model/MathOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/MenuInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/View/MenuInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Controller/Movement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Controller/Settings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Sheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Model/Sheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Spreadsheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Model/Spreadsheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Viewport.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/View/Viewport.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +46,9 @@
     "Application.Unnamed.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Modelo–vista–controlador",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/ADMIN/23-24-IdSw2-SDD/pyHojaDeCalculo",
     "node.js.detected.package.eslint": "true",
@@ -75,6 +83,7 @@
       <workItem from="1709804744948" duration="21000" />
       <workItem from="1710415892001" duration="407000" />
       <workItem from="1710416307086" duration="3948000" />
+      <workItem from="1717058764804" duration="1056000" />
     </task>
     <servers />
   </component>

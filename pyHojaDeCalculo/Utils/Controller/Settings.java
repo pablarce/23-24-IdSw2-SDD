@@ -1,4 +1,4 @@
-package Utils;
+package Utils.Controller;
 
 public class Settings {
     public static final int VIEWPORT_HEIGHT = 10;
