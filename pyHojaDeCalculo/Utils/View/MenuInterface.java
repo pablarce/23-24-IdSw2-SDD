@@ -1,6 +1,6 @@
-package Utils;
+package Utils.View;
 
-class MenuInterface {
+public class MenuInterface {
 
     public static void showMovementMenu(String currentCell) {
         System.out.println("Celda actual: " + currentCell);

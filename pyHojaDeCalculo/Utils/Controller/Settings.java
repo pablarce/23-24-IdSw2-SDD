@@ -1,8 +1,9 @@
-package Utils;
+package Utils.Controller;
 
 public class Settings {
     public static final int VIEWPORT_HEIGHT = 10;
     public static final int VIEWPORT_WIDTH = 10;
+    public static final int INITIAL_CELL_SIZE = 8;
     public static final int MAX_ROWS = 20;
     public static final int MAX_COLUMNS_NUMBER = 20;
     public static final char MAX_COLUMNS_CHAR = getMaxColumns(MAX_COLUMNS_NUMBER);
