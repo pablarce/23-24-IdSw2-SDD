@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="035db25a-81ad-454f-bd02-9b134ef899dd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Model/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/MathOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Model/MathOperations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/MenuInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/View/MenuInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Controller/Movement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Controller/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Sheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Model/Sheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Spreadsheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Model/Spreadsheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Viewport.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/View/Viewport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Controller/Movement.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Controller/Navigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Model/Spreadsheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/pyHojaDeCalculo/Utils/Model/Spreadsheet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +43,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "Modelo–vista–controlador",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ADMIN/23-24-IdSw2-SDD/pyHojaDeCalculo",
+    "last_opened_file_path": "C:/Users/caoal_7ce87t7/23-24-IdSw2-SDD",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -58,7 +51,7 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
@@ -84,6 +77,7 @@
       <workItem from="1710415892001" duration="407000" />
       <workItem from="1710416307086" duration="3948000" />
       <workItem from="1717058764804" duration="1056000" />
+      <workItem from="1717161274155" duration="545000" />
     </task>
     <servers />
   </component>
@@ -91,11 +85,6 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="749e76d3-c72f-4613-91a6-997ab56ca022" value="TOOL_WINDOW" />
-      </map>
-    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="749e76d3-c72f-4613-91a6-997ab56ca022">
@@ -114,6 +103,11 @@
             <State />
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="749e76d3-c72f-4613-91a6-997ab56ca022" value="TOOL_WINDOW" />
       </map>
     </option>
   </component>

@@ -1,45 +1,52 @@
 @startuml
 
-object "spreadsheet: Spreadsheet" as spreadsheet {
-    - sheet : Sheet
-    - movement : Movement
-    - input : Scanner
-    - rows : int
-    - columns : int
+@startuml
+class Spreadsheet {
+    - sheet
+    - Navigator
+    - input
+    - rows
+    - columns
 }
 
-object "cell: Cell" as cell {
-    - x : int
-    - y : int
-    - cellValue : String
+class Cell {
+    - x
+    - y
+    - cellValue
 }
 
-object "mathOperations: MathOperations" as mathOperations
+class MathOperations
 
-object "menu: Menu" as menu
+class Menu
 
-object "movement: Movement" as movement
+class Navigator
 
-object "settings: Settings" as settings
-
-object "sheet: Sheet" as sheet {
-    - sheetData : Cell[][]
-    - currentCell : String
-    - spacing : int
+class Settings{
+    +ViewportHeight
+    +ViewportWidth
+    +MaxRows
+    +MaxColumnsNumber 
+    +MaxColumnsChar
 }
 
-object "viewport: Viewport" as viewport
+class Sheet {
+    - sheetData
+    - currentCell
+    - spacing
+}
 
-spreadsheet *-d-> sheet
-spreadsheet *--> movement
-spreadsheet -l-|> settings
-spreadsheet --|> viewport
-spreadsheet --|> mathOperations
-spreadsheet -r-|> menu
-movement --|> settings
-viewport ..> sheet
-viewport -|> settings
-mathOperations ..> sheet
-sheet -d-> cell
+class Viewport
+
+Spreadsheet *-d-> Sheet
+Spreadsheet *--> Navigator
+Spreadsheet --down-|> Settings
+Spreadsheet --|> Viewport
+Spreadsheet --|> MathOperations
+Spreadsheet --|> Menu
+Navigator --|> Settings
+Viewport ..> Sheet
+Viewport -|> Settings
+MathOperations ..> Sheet
+Sheet -d-> Cell
 
 @enduml

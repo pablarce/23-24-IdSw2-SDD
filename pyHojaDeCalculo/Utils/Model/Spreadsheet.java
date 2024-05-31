@@ -1,7 +1,7 @@
 package Utils.Model;
 
 import Utils.View.MenuInterface;
-import Utils.Controller.Movement;
+import Utils.Controller.Navigator;
 import Utils.Controller.Settings;
 import Utils.View.Viewport;
 
@@ -9,14 +9,14 @@ import java.util.Scanner;
 
 public class Spreadsheet {
     private Sheet sheet;
-    private Movement movement;
+    private Navigator movement;
     private Scanner input;
     private int rows = Settings.MAX_ROWS;
     private int columns = Settings.MAX_COLUMNS_NUMBER;
 
     public Spreadsheet() {
         sheet = new Sheet(rows, columns);
-        movement = new Movement();
+        movement = new Navigator();
         input = new Scanner(System.in);
     }
 
