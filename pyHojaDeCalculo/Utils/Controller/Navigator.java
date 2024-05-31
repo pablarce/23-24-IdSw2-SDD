@@ -1,50 +1,55 @@
 package Utils.Controller;
 
 public class Navigator {
-    public int getFormattedRow(String currentCell) {
-        return Integer.parseInt(currentCell.substring(1));
+    public int getFormattedRow(String currentCellPosition) {
+        return Integer.parseInt(currentCellPosition.substring(1));
     }
 
-    public int getFormattedColumn(String currentCell) {
-        return currentCell.charAt(0) - 'A';
+    public int getFormattedColumn(String currentCellPosition) {
+        return currentCellPosition.charAt(0) - 'A';
     }
 
-    public String handleCommand(String command, String currentCell) {
+    public String handleCommand(String command, String currentCellPosition) {
         switch (command) {
             case "w":
-                return moveUp(currentCell);
+                return moveUp(currentCellPosition);
             case "a":
-                return moveLeft(currentCell);
+                return moveLeft(currentCellPosition);
             case "s":
-                return moveDown(currentCell);
+                return moveDown(currentCellPosition);
             case "d":
-                return moveRight(currentCell);
+                return moveRight(currentCellPosition);
             default:
                 System.out.println("Comando no reconocido.");
-                return currentCell;
+                return currentCellPosition;
         }
     }
 
-    private String moveUp(String currentCell) {
-        int row = getFormattedRow(currentCell);
-        return row > 0 ? String.format("%c%d", currentCell.charAt(0), row - 1) : currentCell;
+    private String moveUp(String currentCellPosition) {
+        int row = getFormattedRow(currentCellPosition);
+        return row > 0 
+            ? String.format("%c%d", currentCellPosition.charAt(0), row - 1) 
+            : currentCellPosition;
     }
 
-    private String moveDown(String currentCell) {
-        int row = getFormattedRow(currentCell);
-        return row < Settings.MAX_ROWS - 1 ? String.format("%c%d", currentCell.charAt(0), row + 1) : currentCell;
+    private String moveDown(String currentCellPosition) {
+        int row = getFormattedRow(currentCellPosition);
+        return row < Settings.MAX_ROWS - 1 
+            ? String.format("%c%d", currentCellPosition.charAt(0), row + 1) 
+            : currentCellPosition;
     }
 
-    private String moveLeft(String currentCell) {
-        char column = currentCell.charAt(0);
-        return column > 'A' ? String.format("%c%d", (char) (column - 1), getFormattedRow(currentCell))
-                : currentCell;
+    private String moveLeft(String currentCellPosition) {
+        char column = currentCellPosition.charAt(0);
+        return column > 'A' 
+            ? String.format("%c%d", (char) (column - 1), getFormattedRow(currentCellPosition)) 
+            : currentCellPosition;
     }
 
-    private String moveRight(String currentCell) {
-        char column = currentCell.charAt(0);
+    private String moveRight(String currentCellPosition) {
+        char column = currentCellPosition.charAt(0);
         return column < Settings.MAX_COLUMNS_CHAR
-                ? String.format("%c%d", (char) (column + 1), getFormattedRow(currentCell))
-                : currentCell;
+            ? String.format("%c%d", (char) (column + 1), getFormattedRow(currentCellPosition))
+            : currentCellPosition;
     }
 }
