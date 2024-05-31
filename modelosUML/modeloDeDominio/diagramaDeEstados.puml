@@ -2,9 +2,18 @@
 
 [*] -d-> Inactive
 
-Inactive -r-> Running : run()
+Inactive -d-> ViewingSpreadsheet : run()
+ViewingSpreadsheet --> Inactive : stop()
 
-Running -l-> Inactive : stop()
-Inactive -d-> [*] : destroy()
+ViewingSpreadsheet --> Moving : move cell()
+Moving --> ViewingSpreadsheet 
+
+ViewingSpreadsheet --> Editing : edit cell()
+Editing --> ViewingSpreadsheet 
+
+ViewingSpreadsheet --> ChangingSize : change cell size()
+ChangingSize --> ViewingSpreadsheet
+
+Inactive -r-> [*] : destroy()
 
 @enduml

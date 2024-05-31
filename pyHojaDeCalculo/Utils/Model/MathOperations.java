@@ -1,4 +1,4 @@
-package Utils;
+package Utils.Model;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
