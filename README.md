@@ -23,7 +23,6 @@ El modelo de dominio del proyecto está compuesto por las siguientes entidades p
 El proyecto está organizado en los siguientes directorios:
 
 - [`casosDeUso`](casosDeUso): Contiene los documentos de casos de uso.
-- [`images`](images): Almacena las imágenes utilizadas en la documentación.
 - [`modelosUML`](modelosUML): Incluye los diagramas UML del proyecto.
 
 
