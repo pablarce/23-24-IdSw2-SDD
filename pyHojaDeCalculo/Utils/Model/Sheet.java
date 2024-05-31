@@ -1,15 +1,13 @@
 package Utils.Model;
 
-import Utils.Model.Cell;
-
 public class Sheet {
     private Cell[][] sheetData;
-    private String currentCell;
-    private int spacing = 8;
+    private String currentCellPosition;
+    private int cellSize = 8;
 
     public Sheet(int rows, int columns) {
         sheetData = new Cell[rows][columns];
-        currentCell = "A0";
+        currentCellPosition = "A0";
         fillSheetData(rows, columns);
     }
 
@@ -23,45 +21,45 @@ public class Sheet {
 
     public String getCellContent(int i, int j) {
 
-        if (getCellLetter(i, j).equals(this.currentCell)) {
+        if (getCellLetter(i, j).equals(this.currentCellPosition)) {
             if (this.sheetData[i][j].getCellValue() == null) {
-                return "[" + (" ").repeat(spacing - 2) + "]" + "|";
+                return "[" + (" ").repeat(cellSize - 2) + "]" + "|";
             } else {
                 String cellValue = this.sheetData[i][j].getCellValue();
 
-                if (cellValue.length() > spacing - 2) {
-                    cellValue = cellValue.substring(0, spacing - 2);
+                if (cellValue.length() > cellSize - 2) {
+                    cellValue = cellValue.substring(0, cellSize - 2);
                 }
-                return "[" + cellValue + " ".repeat(spacing - 2 - cellValue.length()) + "]" + "|";
+                return "[" + cellValue + " ".repeat(cellSize - 2 - cellValue.length()) + "]" + "|";
             }
         } else {
             if (this.sheetData[i][j].getCellValue() == null) {
-                return (" ").repeat(spacing) + "|";
+                return (" ").repeat(cellSize) + "|";
             } else {
                 String cellValue = this.sheetData[i][j].getCellValue();
 
-                if (cellValue.length() > spacing) {
-                    cellValue = cellValue.substring(0, spacing);
+                if (cellValue.length() > cellSize) {
+                    cellValue = cellValue.substring(0, cellSize);
                 }
-                return cellValue + " ".repeat(spacing - cellValue.length()) + "|";
+                return cellValue + " ".repeat(cellSize - cellValue.length()) + "|";
             }
         }
     }
 
-    public int getSpacing() {
-        return spacing;
+    public int getCellSize() {
+        return cellSize;
     }
 
     static String getCellLetter(int i, int j) {
         return (char) (j + 65) + String.valueOf(i);
     }
 
-    public String getCurrentCell() {
-        return currentCell;
+    public String getCurrentCellPosition() {
+        return currentCellPosition;
     }
 
-    public void setCurrentCell(String currentCell) {
-        this.currentCell = currentCell;
+    public void setCurrentCellPosition(String newCellPosition) {
+        this.currentCellPosition = newCellPosition;
     }
 
     public void setCellValue(int row, int col, String value) {
@@ -81,9 +79,9 @@ public class Sheet {
     }
 
     public void setCellSize(int size) {
-        this.spacing = size;
-        if (this.spacing < 1) {
-            this.spacing = 1;
+        this.cellSize = size;
+        if (this.cellSize < 1) {
+            this.cellSize = 1;
         }
     }
 }
