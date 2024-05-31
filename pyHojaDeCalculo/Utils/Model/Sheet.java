@@ -1,9 +1,11 @@
 package Utils.Model;
 
+import Utils.Controller.Settings;
+
 public class Sheet {
     private Cell[][] sheetData;
     private String currentCellPosition;
-    private int cellSize = 8;
+    private int cellSize = Settings.INITIAL_CELL_SIZE;
 
     public Sheet(int rows, int columns) {
         sheetData = new Cell[rows][columns];
