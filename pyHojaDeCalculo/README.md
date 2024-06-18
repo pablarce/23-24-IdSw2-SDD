@@ -1,10 +1,7 @@
 Codigo para pyHojaDeCalculo
 
--[Navigator](Utils/Controller/Navigator.java)
--[]()
--[]()
--[]()
--[]()
--[]()
--[]()
--[]()
+## Modelo-vista-controlador
+-[Controller](Utils/Controller)
+-[Model](/Utils/Model/)
+-[View](Utils/View/)
+
