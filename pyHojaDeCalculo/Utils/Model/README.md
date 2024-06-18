@@ -17,4 +17,7 @@ Además, Sheet cumple con varios principios SOLID de diseño de software. El pri
 
 # Clase Spreadsheet
 ### ¿Por Que?
+
+La clase Spreadsheets muestra un alto acoplamiento debido a su estrecha dependencia de varias clases clave como Navigator, Settings, Viewport, MenuInterface y MathOperations. Estas dependencias son fundamentales porque Spreadsheets contiene la lógica central de la hoja de cálculo, siendo responsable de coordinar y ejecutar todas las operaciones principales que se realizan en la aplicación. Un ejemplo concreto se observa al querer cambiar el valor de una celda, como se evidencia en las líneas [38 a 40](https://github.com/pablarce/23-24-IdSw2-SDD/blob/fead6900c7c9dcd2f1063ecd556f2c7d42b19b14/pyHojaDeCalculo/Utils/Model/Spreadsheet.java#L38). En este proceso, Spreadsheets transfiere la entrada del usuario a MathOperations, donde se realizan los cálculos pertinentes.
+
 ### Que Cambiamos
