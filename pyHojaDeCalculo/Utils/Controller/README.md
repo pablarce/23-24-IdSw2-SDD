@@ -8,4 +8,7 @@ Además, los métodos de movimiento como [moveUp, moveDown, moveLeft, moveRight]
 
 # Clase Settings
 ### Por Que
+
+La clase Settings exhibe bajo acoplamiento al no depender de otras clases, y alta cohesión al concentrarse exclusivamente en almacenar configuraciones estáticas. Es altamente reutilizable para cualquier proyecto con necesidades similares de configuración. Cumple parcialmente con el principio S (Single Responsibility Principle) de SOLID, dado que su responsabilidad principal es la gestión de configuraciones estáticas. Sin embargo, incluye la función [getMaxColumns](https://github.com/pablarce/23-24-IdSw2-SDD/blob/721a9f57351b5304017dbe8d2ee7a7e2ea8bf0fd/pyHojaDeCalculo/Utils/Controller/Settings.java#L12), la cual permanece en esta clase debido a su importancia crítica para ciertas operaciones del proyecto. Moverla a otra clase podría comprometer parcialmente este principio. Otra solución sería crear una nueva clase para esta función, pero podría resultar en una estructura demasiado fragmentada y dificultar la legibilidad del código.
+
 ### Que Cambiamos
