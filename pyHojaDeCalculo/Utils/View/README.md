@@ -23,3 +23,5 @@ En relación con los principios SOLID, esta clase cumple parcialmente con:S (Sin
 
 
 ***¿Que cambiamos?***
+
+La clase Menu fue diseñada para mostrar el menú de movimiento, también puede mostrar el contenido completo de la hoja de cálculo, como podemos observar: ![alt text](../../../images/menu.png), pero en la nueva clase MenuInterface está más centrado en las interacciones de la vista, ya que proporciona una interfaz de menú para mover la celda actual y editarla, además de cambiar el tamaño de las celdas, (https://github.com/pablarce/23-24-IdSw2-SDD/blob/main/pyHojaDeCalculo/Utils/View/MenuInterface.java)
