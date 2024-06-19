@@ -4,6 +4,10 @@
 
 Este proyecto es una implementación de una hoja de cálculo en Java. El objetivo es replicar algunas de las funcionalidades básicas de una hoja de cálculo, permitiendo a los usuarios realizar operaciones matemáticas y gestionar datos de manera eficiente.
 
+## Base original del proyecto 📚
+
+Para poder comparar el desarrollo de nuestro código, se puede comparar con la base inicial del mismo en el siguiente [repositorio](https://github.com/pablarce/23-24-eda1/tree/Reto-001/002/entregas/arcePablo/Reto-002-HojaDeCalculo/src).
+
 ## Funcionalidades Principales ✨
 
 - **Ingreso de Datos**: Los usuarios pueden ingresar datos manualmente en las celdas.
